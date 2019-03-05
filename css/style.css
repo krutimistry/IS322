@@ -166,7 +166,8 @@ input[type=submit]:hover {
 .carouselbox {
   font-family: helvetica,sans-serif;
   font-size: 14px;
-  width: 1050px;
+  /*width: 1050px;*/
+  width: auto;
   position: relative;
   margin: 1em;
   border: 1px solid #ccc;
@@ -187,7 +188,7 @@ input[type=submit]:hover {
   z-index: 2;
 }
 .active {
-  height: 215px;
+  height: 230px;
 }
 .carouselbox button {
   border: none;
