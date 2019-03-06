@@ -1,0 +1,27 @@
+/*section styles*/
+section#productCatalog{
+    margin-left:2em;
+    margin-right:2em;
+    padding:1em;
+}
+
+article.productCard{
+    display:inline-block;
+    border-color:black;
+    border-width:2px;
+}
+
+/*filtering styles*/
+.shoeFilters{
+    display:inline-block;
+    margin-right:1em;
+    width:10em;
+}
+
+/*image styles*/
+article>img{
+    text-align:center;
+}
+img.productDetails{
+    width:250px;
+}

@@ -59,7 +59,7 @@ window.onload=function() {
         {
             _id: '007',
             type: 'casual',
-            color: 'gold',
+            color: 'yellow',
             size: [2, 6.5, 7, 9.5, 12],
             price: 49.99,
             image: 'images/shoe7',
@@ -77,7 +77,7 @@ window.onload=function() {
         {
             _id: '009',
             type: 'casual',
-            color: 'pink',
+            color: 'red',
             size: [2, 6.5, 7, 9.5, 12],
             price: 54.99,
             image: 'images/shoe9',
@@ -86,7 +86,7 @@ window.onload=function() {
         {
             _id: '010',
             type: 'flat',
-            color: 'silver',
+            color: 'grey',
             size: [5, 6, 7.5, 9.5, 10, 10.5, 11],
             price: 54.99,
             image: 'images/shoe10',
@@ -193,7 +193,7 @@ window.onload=function() {
 
         database.forEach(function(product) {
 
-            const productCard = '<article class=\"productCard\"><img id=\"productImage\" class=\"productDetails\" alt=\"shoe\"src=\"' + product.image + '.jpg\" /><p id=\"productName\" class=\"productDetails\">' + product.name + '</p><p id=\"productPrice\" class=\"productDetails\">$' + product.price + '</p></article>';
+            const productCard = '<article class=\"productCard\"><img class=\"productDetails\" alt=\"shoe\"src=\"' + product.image + '.jpg\" /><p id=\"productName\" class=\"productDetails\">' + product.name + '</p><p id=\"productPrice\" class=\"productDetails\">$' + product.price + '</p></article>';
 
             return productSpace.innerHTML += productCard;
         });
@@ -201,5 +201,92 @@ window.onload=function() {
 
     renderProducts(shoesDB);
 
-    console.log("render products activated");
+    // function to filter shoes by color
+    function colorFiltering(database, criteria){
+
+        var shoesTrue=[];
+
+        database.forEach(function(shoe){
+
+            if(shoe.color==criteria){
+                shoesTrue.push(shoe);
+            }
+        });
+
+        return shoesTrue;
+    }
+
+    //color event listener: listens for change to color filter
+
+    document.querySelector('#colorFilter').addEventListener('change', function(event){
+        var filterColor=event.target.value.toString();
+
+        console.log(filterColor);
+
+        if(filterColor==="none"){
+            renderProducts(shoesDB);
+        }else{
+            var coloredShoes=colorFiltering(shoesDB,filterColor);
+            renderProducts(coloredShoes);
+        }
+
+    });
+
+    // function to filter shoes by type
+    function typeFiltering(database, criteria){
+
+        var shoesTrue=[];
+
+        database.forEach(function(shoe){
+
+            if(shoe.type===criteria){
+                shoesTrue.push(shoe);
+            }
+        });
+
+        return shoesTrue;
+    }
+
+    //color event listener: listens for change to type filter
+
+    document.querySelector('#typeFilter').addEventListener('change', function(event){
+        var filterType=event.target.value.toString();
+
+        if(filterType=="none"){
+            renderProducts(shoesDB);
+        }else{
+            var typedShoes=typeFiltering(shoesDB,filterType);
+            renderProducts(typedShoes);
+        }
+
+    });
+
+    //function to filter shoes by size
+    function sizeFiltering(database, criteria){
+
+        var shoesTrue=[];
+
+        database.forEach(function(shoe){
+            var shoeSizes=shoe.size;
+
+            if(shoeSizes.includes(criteria)){
+                shoesTrue.push(shoe);
+            }
+        });
+
+        return shoesTrue;
+    }
+
+    document.querySelector('#sizeFilter').addEventListener('change', function(event){
+        var filterSize=parseFloat(event.target.value.toString());
+
+        if(filterSize=="none"){
+            renderProducts(shoesDB);
+        }else{
+            var sizedShoes=sizeFiltering(shoesDB,filterSize);
+            renderProducts(sizedShoes);
+        }
+
+    });
+
 }();
