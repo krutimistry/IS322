@@ -1,23 +1,23 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>Product List</title>
-<meta charset="utf-8">
+    <title>Product List</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/productList.css">
 </head>
 
 <body>
 <header>
-<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">Product List</a></li>
-  <li><a href="#contact">Contact</a></li>
-</ul>
-<div class="header-image">  
-	<img src="images/shoe-lover-header.jpg" width="99%" height="50%" alt="shoe collage">
-</div>
-<h1 class="header-text">Shoe Company Name</h1>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product List</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <h1 class="header-text">Shoe Company Name</h1>
 </header>
 
 <section id="productFiltering">
@@ -28,54 +28,29 @@
         <option value="hiLo">Price (High-Low)</option>
     </select>
     <label for="colorFilter" >Filter By: </label>
-    <select id="colorFilter" class="shoeFilters">
-        <option value="none">Color</option>
-        <option value="black">Black</option>
-        <option value="blue">Blue</option>
-        <option value="brown">Brown</option>
-        <option value="grey">Grey</option>
-        <option value="red">Red</option>
-        <option value="white">White</option>
-        <option value="yellow">Yellow</option>
-    </select>
-    <select id="typeFilter" class="shoeFilters">
-        <option value="none">Type</option>
-        <option value="boot">Boot</option>
-        <option value="sneaker">Sneaker</option>
-        <option value="casual">Casual</option>
-        <option value="flat">Flat</option>
-        <option value="heel">Heel</option>
-        <option value="slipper">Slipper</option>
-        <option value="sandal">Sandal</option>
-    </select>
-    <select id="sizeFilter" class="shoeFilters">
-        <option value="none">Size</option>
-        <option value="2">2</option>
-        <option value="5">5</option>
-        <option value="5.5">5.5</option>
-        <option value="6">6</option>
-        <option value="6.5">6.5</option>
-        <option value="7">7</option>
-        <option value="7.5">7.5</option>
-        <option value="8">8</option>
-        <option value="8.5">8.5</option>
-        <option value="9">9</option>
-        <option value="9.5">9.5</option>
-        <option value="10">10</option>
-        <option value="10.5">10.5</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-    </select>
+    <select id="colorFilter" class="shoeFilters"></select>
+    <select id="typeFilter" class="shoeFilters"></select>
+    <select id="sizeFilter" class="shoeFilters"></select>
 </section>
 
-<section id="productCatalog">
-</section>
+<section id="productCatalog"></section>
 
 <script type="text/javascript" src="js/productList.js"></script>
 </body>
 
+<script>//responsive nav bar
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
 <div id="footer">
-  <div class="copyright"><small>Copyright. All Rights Reserved | by IS322 - Kruti and Sarah.</small></div>
+    <div class="copyright"><small>Copyright. All Rights Reserved | by IS322 - Kruti and Sarah.</small></div>
 </div>
 
 </html>

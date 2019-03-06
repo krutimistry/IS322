@@ -193,13 +193,89 @@ window.onload=function() {
 
         database.forEach(function(product) {
 
-            const productCard = '<article class=\"productCard\"><img class=\"productDetails\" alt=\"shoe\"src=\"' + product.image + '.jpg\" /><p id=\"productName\" class=\"productDetails\">' + product.name + '</p><p id=\"productPrice\" class=\"productDetails\">$' + product.price + '</p></article>';
+            const productCard = '<article class=\"productCard\"><img class=\"productDetails\" alt=\"shoe\" src=\"' + product.image + '.jpg\" /><p id=\"productName\" class=\"productDetails\">' + product.name + '</p><p id=\"productPrice\" class=\"productDetails\">$' + product.price + '</p></article>';
 
             return productSpace.innerHTML += productCard;
         });
     }
 
+    //runs the renderProducts function on the mockdatabase
     renderProducts(shoesDB);
+
+    //function to create filtering options
+
+    function renderOptions(database) {
+        const colors=["none"];
+        const sizes=["none"];
+        const types=["none"];
+
+        //creates lists of each color, size, and type used by shoes
+
+        database.forEach(function(shoe){
+            var color=shoe.color;
+            var sizeRange=shoe.size;
+            var type=shoe.type;
+
+            if(!colors.includes(color)){
+                colors.push(color);
+            }
+
+            if(!types.includes(type)){
+                types.push(type);
+            }
+
+            sizeRange.forEach(function(size){
+                if(!sizes.includes(size)){
+                    sizes.push(size);
+                }
+            })
+        })
+
+        //designates the spaces where the code is going
+
+        const colorOptions = document.getElementById('colorFilter');
+        const sizeOptions=document.getElementById('sizeFilter');
+        const typeOptions=document.getElementById('typeFilter');
+
+        //creates color options
+
+        colorOptions.innerHTML='';
+
+        colors.forEach(function(coloring){
+            if(coloring=='none'){
+                colorOptions.innerHTML+=('<option value=\"'+coloring+'\">Color</option>');
+            }else{
+                colorOptions.innerHTML+=('<option value=\"'+coloring+'\">'+coloring+'</option>');
+            }
+        })
+
+        //creates size options
+
+        sizeOptions.innerHTML='';
+
+        sizes.forEach(function(sizing){
+            if(sizing=='none'){
+                sizeOptions.innerHTML+=('<option value=\"'+sizing+'\">Size</option>');
+            }else{
+                sizeOptions.innerHTML+=('<option value=\"'+sizing+'\">'+sizing+'</option>');
+            }
+        })
+
+        //creates type options
+
+        typeOptions.innerHTML='';
+
+        types.forEach(function(typing){
+            if(typing=='none'){
+                typeOptions.innerHTML+=('<option value=\"'+typing+'\">Type</option>');
+            }else{
+                typeOptions.innerHTML+=('<option value=\"'+typing+'\">'+typing+'</option>');
+            }
+        })
+    }
+
+    //runs the render options function on mock database
+    renderOptions(shoesDB);
 
     // function to filter shoes by color
     function colorFiltering(database, criteria){
