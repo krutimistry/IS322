@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-<title>Product List</title>
-<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Product List</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/productList.css">
 </head>
-
+  
 <body>
 <header>
 <div class="topnav" id="myTopnav">
@@ -19,35 +20,25 @@
 <h1 class="header-text">Shoe Company Name</h2>
 </header>
 
-<div class="productList-text">
-<h2>test product list - update product list with filtering capability.</h2>
-<div class="row">
-  <div class="column">
-    <img src="images/shoe1.jpg" style="width:50%">
-	<p>Black Strappy Heels</p>
-	<p>$35.95</p>
-  </div>
-  <div class="column">
-    <img src="images/shoe2.jpg" style="width:50%">
-	<p>Black Strappy Heels</p>
-	<p>$45.50</p>
-  </div>
-  <div class="column">
-    <img src="images/shoe3.jpg" style="width:50%">
-	<p>Black Strappy Heels</p>
-	<p>$25.95</p>
-  </div>
-  <div class="column">
-    <img src="images/shoe4.jpg" style="width:50%">
-	<p>Black Strappy Heels</p>
-	<p>$27.00</p>
-  </div>
-</div>
-</div>
+<section id="productFiltering">
+    <label for="orderOptions">Order By: </label>
+    <select id="orderOptions" class="shoeFilters">
+        <option value="name">Name</option>
+        <option value="loHi">Price (Low-High)</option>
+        <option value="hiLo">Price (High-Low)</option>
+    </select>
+    <label for="colorFilter" >Filter By: </label>
+    <select id="colorFilter" class="shoeFilters"></select>
+    <select id="typeFilter" class="shoeFilters"></select>
+    <select id="sizeFilter" class="shoeFilters"></select>
+</section>
+  
+<section id="productCatalog"></section>
 
+<script type="text/javascript" src="js/productList.js"></script>
 </body>
 
-<script>//responsive nav bar
+  <script>//responsive nav bar
 function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
