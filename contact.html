@@ -8,22 +8,20 @@
 
 <body>
 <header>
-
-<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">Product List</a></li>
-  <li><a href="#contact">Contact</a></li>
-</ul>
-<div class="header-image">  
-	<img src="images/shoe-lover-header.jpg" width="99%" height="50%">
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="product.html">Product List</a>
+  <a href="contact.html">Contact</a>
+  
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
-
-<h1 class="header-text">Shoe Company Name</h2>
+<br><h1 class="header-text">Shoe Company Name</h2><br>
+</header>
 
 <div class="container">
   <div class="row">
     <div class="column">
-      <form action="/action_page.php">
+      <form action="contact.html">
         <label for="fname">First Name</label>
         <input type="text" id="fname" name="firstname" placeholder="First Name">
         <label for="lname">Last Name</label>
@@ -43,6 +41,17 @@
 
 </header>
 </body>
+
+<script>//responsive nav bar
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 
 <div id="footer">
   <div class="copyright"><small>Copyright. All Rights Reserved | by IS322 - Kruti and Sarah</a>.</small></div>
