@@ -6,18 +6,18 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/productList.css">
 </head>
-
+  
 <body>
 <header>
-    <div class="topnav" id="myTopnav">
-        <a href="index.html">Home</a>
-        <a href="product.html">Product List</a>
-        <a href="contact.html">Contact</a>
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="product.html">Product List</a>
+  <a href="contact.html">Contact</a>
+  
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
 
-        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-    </div>
-
-    <h1 class="header-text">Shoe Company Name</h1>
+<h1 class="header-text">Shoe Company Name</h2>
 </header>
 
 <section id="productFiltering">
@@ -32,25 +32,25 @@
     <select id="typeFilter" class="shoeFilters"></select>
     <select id="sizeFilter" class="shoeFilters"></select>
 </section>
-
+  
 <section id="productCatalog"></section>
 
 <script type="text/javascript" src="js/productList.js"></script>
 </body>
 
-<script>//responsive nav bar
+  <script>//responsive nav bar
 function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
 }
 </script>
 
 <div id="footer">
-    <div class="copyright"><small>Copyright. All Rights Reserved | by IS322 - Kruti and Sarah.</small></div>
+  <div class="copyright"><small>Copyright. All Rights Reserved | by IS322 - Kruti and Sarah</a>.</small></div>
 </div>
 
 </html>
