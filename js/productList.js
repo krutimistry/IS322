@@ -374,7 +374,7 @@ window.onload=function() {
 
         database.forEach(function(shoe){
             shoeNames.push(shoe.name);
-        })
+        });
 
         shoeNames.sort();
 
@@ -388,9 +388,35 @@ window.onload=function() {
 
         });
 
-        renderProducts(sortedShoes);
+        return sortedShoes;
 
     }
+
+    function renderLoHi(database){
+        var shoePrices=[];
+        var sortedShoes=[];
+
+        database.forEach(function(shoe){
+            if(!shoePrices.includes(shoe.price)) {
+                shoePrices.push(shoe.price);
+            }
+        });
+
+        shoePrices.sort(function(a,b){return a-b});
+
+        shoePrices.forEach(function(price){
+            for(var i=0;i<shoePrices.length;i++){
+                if(database[i].price==price){
+                    sortedShoes.push(database[i]);
+                }
+            }
+
+        });
+
+        return sortedShoes;
+    }
+
+
 
     document.querySelector('#orderOptions').addEventListener('change', function(event){
         var selectOption=event.target.value.toString();
@@ -398,7 +424,15 @@ window.onload=function() {
         if(selectOption=="none"){
             renderProducts(shoesDB);
         }else if(selectOption=='name'){
-            renderNameOrder(shoesDB);
+            var namedShoes=renderNameOrder(shoesDB);
+            renderProducts(namedShoes);
+        }else if(selectOption=='loHi'){
+            var loHi=renderLoHi(shoesDB);
+            renderProducts(loHi);
+        }else if(selectOption=='hiLo'){
+            var hiLo=renderLoHi(shoesDB);
+            hiLo.reverse();
+            renderProducts(hiLo);
         }
 
     });
