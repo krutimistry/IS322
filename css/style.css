@@ -102,12 +102,6 @@ body, html {
   padding: 5px;
 }
 
-.productList-text {
-  position: relative;
-  text-align: center;
-  width: 98%;
-  margin: auto;
-}
 /* -- contact form --*/
 input[type=text], select, textarea {
   width: 100%;

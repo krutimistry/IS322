@@ -45,7 +45,7 @@ window.onload=function() {
             size: [5, 6, 7.5, 9.5, 10, 10.5, 11],
             price: 159.99,
             image: 'images/shoe5',
-            name: 'Womens UGG® Classic Short II Boot'
+            name: 'UGG® Classic Short II Boot'
         },
         {
             _id: '006',
@@ -54,7 +54,7 @@ window.onload=function() {
             size: [5, 5.5, 7, 9, 12],
             price: 199.99,
             image: 'images/shoe6',
-            name: 'Womens Dr. Martens Virginia 20-Eye Boot'
+            name: 'Dr. Martens Virginia 20-Eye Boot'
         },
         {
             _id: '007',
@@ -63,7 +63,7 @@ window.onload=function() {
             size: [2, 6.5, 7, 9.5, 12],
             price: 49.99,
             image: 'images/shoe7',
-            name: 'Womens TOMS Classic Slip On Casual Shoe'
+            name: 'TOMS Classic Slip On Casual Shoe'
         },
         {
             _id: '008',
@@ -72,7 +72,7 @@ window.onload=function() {
             size: [6.5, 7, 7.5, 8, 8.5, 9.5, 10],
             price: 59.99,
             image: 'images/shoe8',
-            name: 'Womens Sperry Top-Sider Crest Vibe Casual Shoe'
+            name: 'Sperry Top-Sider Crest Vibe Casual Shoe'
         },
         {
             _id: '009',
@@ -81,7 +81,7 @@ window.onload=function() {
             size: [2, 6.5, 7, 9.5, 12],
             price: 54.99,
             image: 'images/shoe9',
-            name: 'Womens Sanuk Donna Hemp Slip On Casual Shoe'
+            name: 'Sanuk Donna Hemp Slip On Casual Shoe'
         },
         {
             _id: '010',
@@ -90,7 +90,7 @@ window.onload=function() {
             size: [5, 6, 7.5, 9.5, 10, 10.5, 11],
             price: 54.99,
             image: 'images/shoe10',
-            name: 'Womens T.U.K. Sophistakitty Flat'
+            name: 'T.U.K. Sophistakitty Flat'
         },
         {
             _id: '011',
@@ -99,7 +99,7 @@ window.onload=function() {
             size: [5, 5.5, 7, 9, 12],
             price: 49.99,
             image: 'images/shoe11',
-            name: 'Womens MIA Esie Ballet Flat'
+            name: 'MIA Esie Ballet Flat'
         },
         {
             _id: '012',
@@ -108,7 +108,7 @@ window.onload=function() {
             size: [2, 6.5, 7, 9.5, 12],
             price: 39.99,
             image: 'images/shoe12',
-            name: 'Womens Rocket Dog Diver Wedge Sandal'
+            name: 'Rocket Dog Diver Wedge Sandal'
         },
         {
             _id: '013',
@@ -117,7 +117,7 @@ window.onload=function() {
             size: [5.5, 7, 8, 8.5, 9],
             price: 59.99,
             image: 'images/shoe13',
-            name: 'Womens Not Rated Ofari Sandal'
+            name: 'Not Rated Ofari Sandal'
         },
         {
             _id: '014',
@@ -126,7 +126,7 @@ window.onload=function() {
             size: [6.5, 7, 7.5, 8, 8.5, 9.5, 10],
             price: 109.99,
             image: 'images/shoe14',
-            name: 'Womens T.U.K. Nosebleed Glitter Boot'
+            name: 'T.U.K. Nosebleed Glitter Boot'
         },
         {
             _id: '015',
@@ -135,7 +135,7 @@ window.onload=function() {
             size: [2, 6.5, 7, 9.5, 12],
             price: 99.99,
             image: 'images/shoe15',
-            name: 'Womens UGG® Tasman Clog'
+            name: 'UGG® Tasman Clog'
         },
         {
             _id: '016',
@@ -144,7 +144,7 @@ window.onload=function() {
             size: [6.5, 7, 7.5, 8, 8.5, 9.5, 10],
             price: 79.99,
             image: 'images/shoe16',
-            name: 'Womens UGG® Bella II Casual Shoe'
+            name: 'UGG® Bella II Casual Shoe'
         },
         {
             _id: '017',
@@ -153,7 +153,7 @@ window.onload=function() {
             size: [5.5, 7, 8, 8.5, 9],
             price: 59.99,
             image: 'images/shoe17',
-            name: 'Womens EMU Australia Mayberry Slide'
+            name: 'EMU Australia Mayberry Slide'
         },
         {
             _id: '018',
@@ -162,7 +162,7 @@ window.onload=function() {
             size: [5, 6, 7.5, 9.5, 10, 10.5, 11],
             price: 44.99,
             image: 'images/shoe18',
-            name: 'Womens Madden Girl Catelyn Platform Slide Sandal'
+            name: 'Madden Girl Catelyn Platform Slide Sandal'
         },
         {
             _id: '019',
@@ -171,7 +171,7 @@ window.onload=function() {
             size: [5, 6, 7.5, 9.5, 10, 10.5, 11],
             price: 99.99,
             image: 'images/shoe19',
-            name: 'Womens Chaco Z/Volv X2 Sandal'
+            name: 'Chaco Z/Volv X2 Sandal'
         },
         {
             _id: '020',
@@ -180,12 +180,18 @@ window.onload=function() {
             size: [2, 6.5, 7, 9.5, 12],
             price: '49.99',
             image: 'images/shoe20',
-            name: 'Womens Sanuk Flip Flop Yoga Salty'
+            name: 'Sanuk Flip Flop Yoga Salty'
         }
     ];
 
-    //renders product cards
+    //working directory: changes as filters and options are applied
+    var workingDir=shoesDB;
+    var currColor='';
+    var currSize=0;
+    var currType='';
+    var currSort='';
 
+    //function to render product cards
     function renderProducts(database) {
         const productSpace = document.getElementById('productCatalog');
 
@@ -203,14 +209,12 @@ window.onload=function() {
     renderProducts(shoesDB);
 
     //function to create filtering options
-
     function renderOptions(database) {
-        const colors=["none"];
-        const sizes=["none"];
-        const types=["none"];
+        const colors=[];
+        const sizes=[0];
+        const types=[];
 
         //creates lists of each color, size, and type used by shoes
-
         database.forEach(function(shoe){
             var color=shoe.color;
             var sizeRange=shoe.size;
@@ -229,16 +233,19 @@ window.onload=function() {
                     sizes.push(size);
                 }
             })
-        })
+        });
 
-        //designates the spaces where the code is going
+        colors.sort();
+        colors.unshift('none');
+        types.sort();
+        types.unshift('none');
 
+        //designates where each list is displayed
         const colorOptions = document.getElementById('colorFilter');
         const sizeOptions=document.getElementById('sizeFilter');
         const typeOptions=document.getElementById('typeFilter');
 
         //creates color options
-
         colorOptions.innerHTML='';
 
         colors.forEach(function(coloring){
@@ -250,11 +257,10 @@ window.onload=function() {
         })
 
         //creates size options
-
         sizeOptions.innerHTML='';
 
         sizes.forEach(function(sizing){
-            if(sizing=='none'){
+            if(sizing==0){
                 sizeOptions.innerHTML+=('<option value=\"'+sizing+'\">Size</option>');
             }else{
                 sizeOptions.innerHTML+=('<option value=\"'+sizing+'\">'+sizing+'</option>');
@@ -262,7 +268,6 @@ window.onload=function() {
         })
 
         //creates type options
-
         typeOptions.innerHTML='';
 
         types.forEach(function(typing){
@@ -273,9 +278,6 @@ window.onload=function() {
             }
         })
     }
-
-    //runs the render options function on mock database
-    renderOptions(shoesDB);
 
     // function to filter shoes by color
     function colorFiltering(database, criteria){
@@ -292,22 +294,6 @@ window.onload=function() {
         return shoesTrue;
     }
 
-    //color event listener: listens for change to color filter
-
-    document.querySelector('#colorFilter').addEventListener('change', function(event){
-        var filterColor=event.target.value.toString();
-
-        console.log(filterColor);
-
-        if(filterColor==="none"){
-            renderProducts(shoesDB);
-        }else{
-            var coloredShoes=colorFiltering(shoesDB,filterColor);
-            renderProducts(coloredShoes);
-        }
-
-    });
-
     // function to filter shoes by type
     function typeFiltering(database, criteria){
 
@@ -322,20 +308,6 @@ window.onload=function() {
 
         return shoesTrue;
     }
-
-    //color event listener: listens for change to type filter
-
-    document.querySelector('#typeFilter').addEventListener('change', function(event){
-        var filterType=event.target.value.toString();
-
-        if(filterType=="none"){
-            renderProducts(shoesDB);
-        }else{
-            var typedShoes=typeFiltering(shoesDB,filterType);
-            renderProducts(typedShoes);
-        }
-
-    });
 
     //function to filter shoes by size
     function sizeFiltering(database, criteria){
@@ -353,16 +325,153 @@ window.onload=function() {
         return shoesTrue;
     }
 
-    document.querySelector('#sizeFilter').addEventListener('change', function(event){
-        var filterSize=parseFloat(event.target.value.toString());
+    //function to sort products in name order
+    function sortNames(database){
+        var shoeNames=[];
 
-        if(filterSize=="none"){
+        var sortedShoes=[];
+
+        database.forEach(function(shoe){
+            shoeNames.push(shoe.name);
+        });
+
+        shoeNames.sort();
+
+        shoeNames.forEach(function(name){
+            for(var i=0;i<shoeNames.length;i++){
+                if(database[i].name==name){
+                    sortedShoes.push(database[i]);
+                    break;
+                }
+            }
+
+        });
+
+        return sortedShoes;
+
+    }
+
+    //function to sort products in price order from low to high
+    function sortPrices(database){
+        var shoePrices=[];
+        var sortedShoes=[];
+
+        database.forEach(function(shoe){
+            if(!shoePrices.includes(shoe.price)) {
+                shoePrices.push(shoe.price);
+            }
+        });
+
+        shoePrices.sort(function(a,b){return a-b});
+
+        shoePrices.forEach(function(price){
+            for(var i=0;i<shoePrices.length;i++){
+                if(database[i].price==price){
+                    sortedShoes.push(database[i]);
+                }
+            }
+
+        });
+
+        return sortedShoes;
+    }
+
+    //working directory: changes as filters and options are applied
+    var currColor='none';
+    var currSize=0;
+    var currType='none';
+    var currSort='none';
+
+    //function to keep a working directory of shoes
+    function workingDirectory(database, color, size, type, sort){
+        var workDir=database;
+        console.log('Current Number of Shoes: '+workDir.length);
+
+        //filter by color
+        if(color!=='none'){
+            console.log('Current Color: '+color);
+            var coloring=colorFiltering(workDir,color);
+            workDir=coloring;
+        }
+
+        console.log('Current Number of Shoes: '+workDir.length);
+
+        //filter by size
+        if(size!==0){
+            var sizing=sizeFiltering(workDir,size);
+            workDir=sizing;
+        }
+
+        //filter by type
+        if(type!='none'){
+            var typing=typeFiltering(workDir,type);
+            workDir=typing;
+        }
+
+        //sort by selected option
+        if(sort=='name'){
+            workDir=sortNames(workDir);
+        }else if(sort=='loHi'){
+            workDir=sortPrices(workDir);
+        }else if(sort=='hiLo'){
+            workDir=sortPrices(workDir);
+            workDir.reverse();
+        }
+
+        return workDir;
+    }
+
+    //color event listener: listens for change to color filter
+    document.querySelector('#colorFilter').addEventListener('change', function(event){
+        var filterColor=event.target.value.toString();
+        console.log('Filtering Color: '+filterColor);
+        currColor=filterColor;
+
+        var workingList=workingDirectory(shoesDB,currColor,currSize,currType,currSort);
+
+        renderProducts(workingList);
+
+    });
+
+
+
+    //type event listener: listens for change to type filter
+    document.querySelector('#typeFilter').addEventListener('change', function(event){
+        var filterType=event.target.value.toString();
+        currType=filterType;
+
+        if(filterType=="none"){
             renderProducts(shoesDB);
         }else{
-            var sizedShoes=sizeFiltering(shoesDB,filterSize);
-            renderProducts(sizedShoes);
+            var typedShoes=typeFiltering(shoesDB,filterType);
+            renderProducts(typedShoes);
         }
 
     });
+
+    //size event listener: listens for changes in the size filter option
+    document.querySelector('#sizeFilter').addEventListener('change', function(event){
+        var filterSize=parseFloat(event.target.value.toString());
+        currSize=filterSize;
+
+        var workingList=workingDirectory(shoesDB,currColor,currSize,currType,currSort);
+
+        renderProducts(workingList);
+
+    });
+
+    //sort event listener: listens for changes in the sort options and then runs the different sorting functions and renders the product list
+    document.querySelector('#orderOptions').addEventListener('change', function(event){
+        var selectOption=event.target.value.toString();
+        currSort=selectOption;
+
+        var workingList=workingDirectory(shoesDB,currColor,currSize,currType,currSort);
+
+        renderProducts(workingList);
+
+    });
+
+    //runs the render options function on mock database
+    renderOptions(shoesDB);
 
 }();

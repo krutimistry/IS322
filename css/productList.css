@@ -1,4 +1,7 @@
 /*section styles*/
+section#productFiltering{
+    margin:1em;
+}
 section#productCatalog{
     margin-left:2em;
     margin-right:2em;
@@ -9,13 +12,16 @@ article.productCard{
     display:inline-block;
     border-color:black;
     border-width:2px;
+    width:250px;
+    margin-left:1em;
+    margin-right:1em;
 }
 
 /*filtering styles*/
-.shoeFilters{
+select.shoeFilters{
     display:inline-block;
-    margin-left:1em;
-    margin-right:1em;
+    margin-left:0.5em;
+    margin-right:0.5em;
     width:10em;
 }
 
