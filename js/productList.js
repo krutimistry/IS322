@@ -184,6 +184,13 @@ window.onload=function() {
         }
     ];
 
+    //working directory: changes as filters and options are applied
+    var workingDir=shoesDB;
+    var currColor='';
+    var currSize=0;
+    var currType='';
+    var currSort='';
+
     //function to render product cards
     function renderProducts(database) {
         const productSpace = document.getElementById('productCatalog');
@@ -203,9 +210,9 @@ window.onload=function() {
 
     //function to create filtering options
     function renderOptions(database) {
-        const colors=["none"];
-        const sizes=["none"];
-        const types=["none"];
+        const colors=[];
+        const sizes=[0];
+        const types=[];
 
         //creates lists of each color, size, and type used by shoes
         database.forEach(function(shoe){
@@ -228,6 +235,11 @@ window.onload=function() {
             })
         });
 
+        colors.sort();
+        colors.unshift('none');
+        types.sort();
+        types.unshift('none');
+
         //designates where each list is displayed
         const colorOptions = document.getElementById('colorFilter');
         const sizeOptions=document.getElementById('sizeFilter');
@@ -248,7 +260,7 @@ window.onload=function() {
         sizeOptions.innerHTML='';
 
         sizes.forEach(function(sizing){
-            if(sizing=='none'){
+            if(sizing==0){
                 sizeOptions.innerHTML+=('<option value=\"'+sizing+'\">Size</option>');
             }else{
                 sizeOptions.innerHTML+=('<option value=\"'+sizing+'\">'+sizing+'</option>');
@@ -364,24 +376,69 @@ window.onload=function() {
         return sortedShoes;
     }
 
+    //working directory: changes as filters and options are applied
+    var currColor='none';
+    var currSize=0;
+    var currType='none';
+    var currSort='none';
+
+    //function to keep a working directory of shoes
+    function workingDirectory(database, color, size, type, sort){
+        var workDir=database;
+        console.log('Current Number of Shoes: '+workDir.length);
+
+        //filter by color
+        if(color!=='none'){
+            console.log('Current Color: '+color);
+            var coloring=colorFiltering(workDir,color);
+            workDir=coloring;
+        }
+
+        console.log('Current Number of Shoes: '+workDir.length);
+
+        //filter by size
+        if(size!==0){
+            var sizing=sizeFiltering(workDir,size);
+            workDir=sizing;
+        }
+
+        //filter by type
+        if(type!='none'){
+            var typing=typeFiltering(workDir,type);
+            workDir=typing;
+        }
+
+        //sort by selected option
+        if(sort=='name'){
+            workDir=sortNames(workDir);
+        }else if(sort=='loHi'){
+            workDir=sortPrices(workDir);
+        }else if(sort=='hiLo'){
+            workDir=sortPrices(workDir);
+            workDir.reverse();
+        }
+
+        return workDir;
+    }
+
     //color event listener: listens for change to color filter
     document.querySelector('#colorFilter').addEventListener('change', function(event){
         var filterColor=event.target.value.toString();
+        console.log('Filtering Color: '+filterColor);
+        currColor=filterColor;
 
-        console.log(filterColor);
+        var workingList=workingDirectory(shoesDB,currColor,currSize,currType,currSort);
 
-        if(filterColor==="none"){
-            renderProducts(shoesDB);
-        }else{
-            var coloredShoes=colorFiltering(shoesDB,filterColor);
-            renderProducts(coloredShoes);
-        }
+        renderProducts(workingList);
 
     });
+
+
 
     //type event listener: listens for change to type filter
     document.querySelector('#typeFilter').addEventListener('change', function(event){
         var filterType=event.target.value.toString();
+        currType=filterType;
 
         if(filterType=="none"){
             renderProducts(shoesDB);
@@ -395,33 +452,22 @@ window.onload=function() {
     //size event listener: listens for changes in the size filter option
     document.querySelector('#sizeFilter').addEventListener('change', function(event){
         var filterSize=parseFloat(event.target.value.toString());
+        currSize=filterSize;
 
-        if(filterSize=="none"){
-            renderProducts(shoesDB);
-        }else{
-            var sizedShoes=sizeFiltering(shoesDB,filterSize);
-            renderProducts(sizedShoes);
-        }
+        var workingList=workingDirectory(shoesDB,currColor,currSize,currType,currSort);
+
+        renderProducts(workingList);
 
     });
 
     //sort event listener: listens for changes in the sort options and then runs the different sorting functions and renders the product list
     document.querySelector('#orderOptions').addEventListener('change', function(event){
         var selectOption=event.target.value.toString();
+        currSort=selectOption;
 
-        if(selectOption=="none"){
-            renderProducts(shoesDB);
-        }else if(selectOption=='name'){
-            var namedShoes=sortNames(shoesDB);
-            renderProducts(namedShoes);
-        }else if(selectOption=='loHi'){
-            var loHi=sortPrices(shoesDB);
-            renderProducts(loHi);
-        }else if(selectOption=='hiLo'){
-            var hiLo=sortPrices(shoesDB);
-            hiLo.reverse();
-            renderProducts(hiLo);
-        }
+        var workingList=workingDirectory(shoesDB,currColor,currSize,currType,currSort);
+
+        renderProducts(workingList);
 
     });
 
