@@ -9,6 +9,7 @@ function navBar() {
 }
 
 //js carousel
+/*
 carousel = (function(){
     // Read necessary elements from the DOM once
     var box = document.querySelector('.carouselbox');
@@ -45,4 +46,22 @@ carousel = (function(){
     // (when direction is 0 counter doesn't change)
     navigate(0);
 })();
+*/
+
+
+//automatic carousel time
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("slides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
 

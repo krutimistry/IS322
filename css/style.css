@@ -226,3 +226,7 @@ input[type=submit]:hover {
   height: 200px;
   display: block;
 }
+
+.slides {
+  display:none;
+}
