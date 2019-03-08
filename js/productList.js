@@ -45,7 +45,7 @@ window.onload=function() {
             size: [5, 6, 7.5, 9.5, 10, 10.5, 11],
             price: 159.99,
             image: 'images/shoe5',
-            name: 'Womens UGG® Classic Short II Boot'
+            name: 'UGG® Classic Short II Boot'
         },
         {
             _id: '006',
@@ -54,7 +54,7 @@ window.onload=function() {
             size: [5, 5.5, 7, 9, 12],
             price: 199.99,
             image: 'images/shoe6',
-            name: 'Womens Dr. Martens Virginia 20-Eye Boot'
+            name: 'Dr. Martens Virginia 20-Eye Boot'
         },
         {
             _id: '007',
@@ -63,7 +63,7 @@ window.onload=function() {
             size: [2, 6.5, 7, 9.5, 12],
             price: 49.99,
             image: 'images/shoe7',
-            name: 'Womens TOMS Classic Slip On Casual Shoe'
+            name: 'TOMS Classic Slip On Casual Shoe'
         },
         {
             _id: '008',
@@ -72,7 +72,7 @@ window.onload=function() {
             size: [6.5, 7, 7.5, 8, 8.5, 9.5, 10],
             price: 59.99,
             image: 'images/shoe8',
-            name: 'Womens Sperry Top-Sider Crest Vibe Casual Shoe'
+            name: 'Sperry Top-Sider Crest Vibe Casual Shoe'
         },
         {
             _id: '009',
@@ -81,7 +81,7 @@ window.onload=function() {
             size: [2, 6.5, 7, 9.5, 12],
             price: 54.99,
             image: 'images/shoe9',
-            name: 'Womens Sanuk Donna Hemp Slip On Casual Shoe'
+            name: 'Sanuk Donna Hemp Slip On Casual Shoe'
         },
         {
             _id: '010',
@@ -90,7 +90,7 @@ window.onload=function() {
             size: [5, 6, 7.5, 9.5, 10, 10.5, 11],
             price: 54.99,
             image: 'images/shoe10',
-            name: 'Womens T.U.K. Sophistakitty Flat'
+            name: 'T.U.K. Sophistakitty Flat'
         },
         {
             _id: '011',
@@ -99,7 +99,7 @@ window.onload=function() {
             size: [5, 5.5, 7, 9, 12],
             price: 49.99,
             image: 'images/shoe11',
-            name: 'Womens MIA Esie Ballet Flat'
+            name: 'MIA Esie Ballet Flat'
         },
         {
             _id: '012',
@@ -108,7 +108,7 @@ window.onload=function() {
             size: [2, 6.5, 7, 9.5, 12],
             price: 39.99,
             image: 'images/shoe12',
-            name: 'Womens Rocket Dog Diver Wedge Sandal'
+            name: 'Rocket Dog Diver Wedge Sandal'
         },
         {
             _id: '013',
@@ -117,7 +117,7 @@ window.onload=function() {
             size: [5.5, 7, 8, 8.5, 9],
             price: 59.99,
             image: 'images/shoe13',
-            name: 'Womens Not Rated Ofari Sandal'
+            name: 'Not Rated Ofari Sandal'
         },
         {
             _id: '014',
@@ -126,7 +126,7 @@ window.onload=function() {
             size: [6.5, 7, 7.5, 8, 8.5, 9.5, 10],
             price: 109.99,
             image: 'images/shoe14',
-            name: 'Womens T.U.K. Nosebleed Glitter Boot'
+            name: 'T.U.K. Nosebleed Glitter Boot'
         },
         {
             _id: '015',
@@ -135,7 +135,7 @@ window.onload=function() {
             size: [2, 6.5, 7, 9.5, 12],
             price: 99.99,
             image: 'images/shoe15',
-            name: 'Womens UGG® Tasman Clog'
+            name: 'UGG® Tasman Clog'
         },
         {
             _id: '016',
@@ -144,7 +144,7 @@ window.onload=function() {
             size: [6.5, 7, 7.5, 8, 8.5, 9.5, 10],
             price: 79.99,
             image: 'images/shoe16',
-            name: 'Womens UGG® Bella II Casual Shoe'
+            name: 'UGG® Bella II Casual Shoe'
         },
         {
             _id: '017',
@@ -153,7 +153,7 @@ window.onload=function() {
             size: [5.5, 7, 8, 8.5, 9],
             price: 59.99,
             image: 'images/shoe17',
-            name: 'Womens EMU Australia Mayberry Slide'
+            name: 'EMU Australia Mayberry Slide'
         },
         {
             _id: '018',
@@ -162,7 +162,7 @@ window.onload=function() {
             size: [5, 6, 7.5, 9.5, 10, 10.5, 11],
             price: 44.99,
             image: 'images/shoe18',
-            name: 'Womens Madden Girl Catelyn Platform Slide Sandal'
+            name: 'Madden Girl Catelyn Platform Slide Sandal'
         },
         {
             _id: '019',
@@ -171,7 +171,7 @@ window.onload=function() {
             size: [5, 6, 7.5, 9.5, 10, 10.5, 11],
             price: 99.99,
             image: 'images/shoe19',
-            name: 'Womens Chaco Z/Volv X2 Sandal'
+            name: 'Chaco Z/Volv X2 Sandal'
         },
         {
             _id: '020',
@@ -180,7 +180,7 @@ window.onload=function() {
             size: [2, 6.5, 7, 9.5, 12],
             price: '49.99',
             image: 'images/shoe20',
-            name: 'Womens Sanuk Flip Flop Yoga Salty'
+            name: 'Sanuk Flip Flop Yoga Salty'
         }
     ];
 
@@ -229,7 +229,7 @@ window.onload=function() {
                     sizes.push(size);
                 }
             })
-        })
+        });
 
         //designates the spaces where the code is going
 
@@ -361,6 +361,44 @@ window.onload=function() {
         }else{
             var sizedShoes=sizeFiltering(shoesDB,filterSize);
             renderProducts(sizedShoes);
+        }
+
+    });
+
+    //function to sort products and place them in name order
+
+    function renderNameOrder(database){
+        var shoeNames=[];
+
+        var sortedShoes=[];
+
+        database.forEach(function(shoe){
+            shoeNames.push(shoe.name);
+        })
+
+        shoeNames.sort();
+
+        shoeNames.forEach(function(name){
+            for(var i=0;i<shoeNames.length;i++){
+                if(database[i].name==name){
+                    sortedShoes.push(database[i]);
+                    break;
+                }
+            }
+
+        });
+
+        renderProducts(sortedShoes);
+
+    }
+
+    document.querySelector('#orderOptions').addEventListener('change', function(event){
+        var selectOption=event.target.value.toString();
+
+        if(selectOption=="none"){
+            renderProducts(shoesDB);
+        }else if(selectOption=='name'){
+            renderNameOrder(shoesDB);
         }
 
     });
